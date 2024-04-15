@@ -28,10 +28,12 @@ export default StartGameScreen;
 
 const styles = StyleSheet.create({
   inputContainer: {
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 100,
     marginHorizontal: 20,
     padding: 16,
-    backgroundColor: "#72063c",
+    backgroundColor: "#4e0329",
     borderRadius: 8,
     elevation: 4,
     shadowColor: "black",
