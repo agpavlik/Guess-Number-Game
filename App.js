@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
+import Colors from "./constants/colors";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -23,7 +24,7 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={["#4e0329", "#ddb59f", "#4e0329"]}
+      colors={[Colors.primary700, Colors.accent600, Colors.primary700]}
       style={styles.rootScreen}
     >
       <ImageBackground
