@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     marginVertical: 4,
     marginHorizontal: 10,
-    borderColor: "white",
-    borderWidth: 2,
+    // borderColor: "white",
+    // borderWidth: 2,
     overflow: "hidden",
   },
   buttonInnerContainer: {
