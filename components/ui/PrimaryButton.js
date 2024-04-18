@@ -3,7 +3,7 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 // Pressable component can detect various stages of press interactions
 // on any of its defined children.
 
-import Colors from "../constants/colors";
+import Colors from "../../constants/colors";
 
 function PrimaryButton({ children, onPress }) {
   return (

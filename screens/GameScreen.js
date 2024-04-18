@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import Title from "../components/Title";
+import Title from "../components/ui/Title";
+import NumberContainer from "../components/game/NumberContainer";
 
-function GameScreen() {
+// Function generates a random number between a min and a max number defined.
+// Also pass in an exclude number which allows to exclude a certain number from being generated.
+// It is important for making sure that user can't immediately guess the number chosen by the user.
+function generateRandomBetween(min, max, exclude) {
+  const rndNum = Math.floor(Math.random() * (max - min)) + min;
+
+  if (rndNum === exclude) {
+    return generateRandomBetween(min, max, exclude);
+  } else {
+    return rndNum;
+  }
+}
+
+function GameScreen({ userNumber }) {
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
+  const [currentGuess, setCurrentGuess] = useState(initialGuess);
+
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
-      {/* GUESS */}
+      <NumberContainer>{currentGuess}</NumberContainer>
       <View>
         <Text>Higher or lower?</Text>
         {/* + - */}
