@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
-import Title from "../components/ui/Title";
+import { View, StyleSheet, Alert } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
 import NumberContainer from "../components/game/NumberContainer";
-import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
-
-import { Ionicons } from "@expo/vector-icons";
+import PrimaryButton from "../components/ui/PrimaryButton";
+import Title from "../components/ui/Title";
 
 // Function generates a random number between a min and a max number defined.
 // Also pass in an exclude number which allows to exclude a certain number from being generated.
@@ -25,14 +25,10 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 function GameScreen({ userNumber, onGameOver }) {
-  const initialGuess = generateRandomBetween(
-    minBoundary,
-    maxBoundary,
-    userNumber
-  );
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
-  // Check numbers and call GemeOverScreen
+  // Check numbers and call GameOverScreen
   useEffect(() => {
     if (currentGuess === userNumber) {
       onGameOver();
@@ -68,6 +64,7 @@ function GameScreen({ userNumber, onGameOver }) {
 
   // Method 'bind' allows to pre-configure the parameter value
   // that will be used in a future function execution.
+
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
@@ -100,7 +97,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
-    marginTop: 36,
   },
   instructionText: {
     marginBottom: 12,
