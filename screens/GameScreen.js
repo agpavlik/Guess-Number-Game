@@ -98,5 +98,15 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
+    marginTop: 36,
+  },
+  instructionText: {
+    marginBottom: 12,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
   },
 });
