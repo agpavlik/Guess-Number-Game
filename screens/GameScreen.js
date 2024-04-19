@@ -6,6 +6,8 @@ import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 
+import { Ionicons } from "@expo/vector-icons";
+
 // Function generates a random number between a min and a max number defined.
 // Also pass in an exclude number which allows to exclude a certain number from being generated.
 // It is important for making sure that user can't immediately guess the number chosen by the user.
@@ -77,12 +79,12 @@ function GameScreen({ userNumber, onGameOver }) {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              -
+              <Ionicons name="remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              +
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
