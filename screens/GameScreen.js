@@ -33,7 +33,7 @@ function GameScreen({ userNumber, onGameOver }) {
   // Check numbers and call GameOverScreen
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameOver]);
 
