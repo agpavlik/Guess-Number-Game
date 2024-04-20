@@ -1,11 +1,12 @@
 import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // SafeAreaView renders nested content and automatically applies padding to reflect on
 // the physical limitation of the screen, such as rounded corners or camera notches.
 
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+import * as SplashScreen from "expo-splash-screen";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
@@ -21,9 +22,20 @@ export default function App() {
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 
+  // ----- Fix problem with SplashScreen
+  useEffect(() => {
+    async function prepare() {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, []);
+
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return undefined;
+  } else {
+    SplashScreen.hideAsync();
   }
+  // -----
 
   // Function check if number is confirmed and switch to a GameScreen
   function pickedNumberHandler(pickedNumber) {
