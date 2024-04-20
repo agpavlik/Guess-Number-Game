@@ -7,7 +7,7 @@ import Colors from "../constants/colors";
 function GameOverScreen() {
   return (
     <View style={styles.rootContainer}>
-      <Text>GAME OVER!</Text>
+      <Title>GAME OVER !</Title>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     height: 300,
     borderRadius: 150,
     borderWidth: 3,
-    borderColor: Colors.primary800,
+    borderColor: Colors.accent600,
     overflow: "hidden",
     margin: 36,
   },
