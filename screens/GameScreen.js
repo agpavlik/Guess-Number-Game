@@ -35,6 +35,12 @@ function GameScreen({ userNumber, onGameOver }) {
     }
   }, [currentGuess, userNumber, onGameOver]);
 
+  // Reset minBoundary & maxBoundary when new game started
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
+
   // Function derive a new number.
   function nextGuessHandler(direction) {
     // Parameter direction is a string which could be 'lower', 'greater'
