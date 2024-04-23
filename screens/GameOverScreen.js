@@ -18,7 +18,7 @@ function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
   let imageSize = 300;
 
   if (width < 380) {
-    imageSize = 200;
+    imageSize = 180;
   }
 
   if (height < 400) {
